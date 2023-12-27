@@ -6,3 +6,22 @@ sudo apt-add-repository ppa:ansible/ansible
 sudo apt-get update
 sudo apt-get install -y ansible
 ansible --version
+
+[AZURE] 
+
+
+# Upgrade pip3.
+sudo pip3 install --upgrade pip
+
+# Install Ansible az collection for interacting with Azure.
+ansible-galaxy collection install azure.azcollection
+
+# Install Ansible modules for Azure
+sudo pip3 install -r ~/.ansible/collections/ansible_collections/azure/azcollection/requirements-azure.txt
+
+#Upgrade! [Importante] 
+/usr/bin/python3 -m pip install --upgrade 'ansible[azure]'
+/usr/bin/python3 -m pip install --upgrade azure-mgmt-resource
+ansible-galaxy collection install azure.azcollection --upgrade
+
+
