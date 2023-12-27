@@ -1,0 +1,8 @@
+useradd -m ansible
+passwd ansible
+echo "ansible ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/ansible
+ssh ansible@[IP]
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt-get update
+sudo apt-get install -y ansible
+ansible --version
